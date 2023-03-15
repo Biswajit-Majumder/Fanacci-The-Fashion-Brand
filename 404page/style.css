@@ -1,0 +1,210 @@
+@font-face {
+    font-family: "Bagola";
+    src: url(../fonts/Bagola-nR5zR.woff) format("woff");
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+}
+::selection{
+    background-color: #171258;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+header{
+    height: 10vh;
+    width: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: black;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.637) 0px 25px 20px -20px;
+    font-family: "Bagola";
+}
+header nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header  nav ul li{
+    margin-left: 4rem;
+}
+main{
+    height: 90vh;
+    width: auto;
+    overflow: hidden;
+    background-image:url(./assets/background__image.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    outline: none;
+}
+.funny__image{
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+}
+.funny__image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contents{
+    backdrop-filter: brightness(40%);
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    width: 33rem;
+    height: 33rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+}
+.text__area{
+    width: 19rem;
+    height: 19rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "caseopia";
+
+}
+.text__area .really__text{
+    position: relative;
+    bottom: -2.3rem;
+}
+.text__area .num{
+    font-size: 9.7em;
+    font-family: "KENOKY";
+
+}
+.text__area .pnf__textt{
+    position: relative;
+    top: -.8rem;
+    text-transform: uppercase;
+    font-family: "Mak";
+
+}
+
+.button__area{
+    margin-bottom: 2.5rem;
+    width: 10rem;
+    height: 3rem;
+    
+
+}
+.btn{
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 1rem;
+    background-color: #f9004d;
+    color: wheat;
+    font-size: 1rem;
+    font-family: "Mak";
+    font-weight: bolder;
+    cursor: pointer;
+    transition: transform 0.3s ease-out;
+}
+
+
+.btn:hover{
+    transform: scale(1.1);
+}
+.cursor{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cursor div{
+    width: 20px;
+    height: 20px;
+    border: 1px solid white;
+    border-radius: 50%;
+    position: absolute;
+    background-color: white;
+    z-index: 100;
+    mix-blend-mode: difference;
+    pointer-events: none;
+}
+.cursor .bigger{
+    width: 60px;
+    height: 60px;
+    border: 2px solid white;
+}
+
+@media  (max-width: 768px) {
+    header{
+        justify-content: space-around;
+    }
+    main{
+        width: auto;
+        height: 90vh;
+    }
+    .contents{
+        height: 100%;
+        font-size: .7em;
+    }
+    .container{
+        width: 60%;
+        height: 60%;
+    }
+    .cursor{
+        display: none;
+    }
+}
+@media (max-width: 360px) {
+    header{
+        justify-content: start;
+        padding-left: 3rem;
+    }
+    nav{
+        display: none;
+    }
+    main{
+        width: auto;
+        height: 90vh;
+    }
+    .funny__image{
+        display: none;
+    }
+    .contents{
+        width: 100%;
+        height: 100%;
+        font-size: .7em;
+    }
+    .container{
+        width: 60%;
+        height: 60%;
+    }
+    .cursor{
+        display: none;
+    }
+}

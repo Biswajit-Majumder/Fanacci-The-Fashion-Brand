@@ -1,0 +1,1248 @@
+@font-face {
+    font-family: "Central Display DEMO" ;
+    src: url(/fonts/CentralDisplayDemoExpanded-w1ql3.woff) format("woff");
+}
+@font-face {
+    font-family: "Romance" ;
+    src: url(/fonts/RomanceLogicDemo-Wy8BE.woff) format("woff");
+}
+@font-face {
+    font-family: "Selga";
+    src: url(/fonts/SelgaDemo-9Y3R7.woff)format("woff");
+}
+@font-face {
+    font-family: "Mak" ;
+    src: url(/fonts/MAK-bold.woff) format("woff");
+}
+@font-face {
+    font-family: "Bagola";
+    src: url(/fonts/Bagola-nR5zR.woff) format("woff");
+}
+@font-face {
+    font-family: "Mogen";
+    src: url(/fonts/MogenRegular-MVvOn.woff) format("woff");
+}
+@font-face {
+    font-family: "KARA";
+    src: url(/fonts/Kara-EagGl.woff) format("woff");
+}
+@font-face {
+    font-family: "KENOKY";
+    src: url(/fonts/KenokyLight-3zezL.woff) format("woff");
+}
+html,body{
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+}
+::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+body::-webkit-scrollbar-thumb{
+    width: 5px;
+}
+::selection{
+    background-color: #000000;
+    color: white;
+}
+// @@@@@@@@@@@@@@@@@@@@@@@@@@  GLOBAL VARIABLES
+.relative{
+    position: relative;
+}
+.position-center{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.pointer{
+    cursor: pointer;
+}
+.list-style-none{
+    list-style: none;
+}
+.text-deco{
+    text-decoration: none;
+}
+.flex{
+    display: flex;
+}
+.flex-column{
+    flex-direction: column;
+}
+.flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.align-item-center{
+    align-items: center;
+}
+.white{
+    color: white;
+}
+// @@@@@@@@@@@@@@@@@@@@@@@@ FUNCTIONS
+@mixin position-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+@mixin center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+@mixin flex-all-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    letter-spacing: 1px;
+}
+body{
+    overflow-x: hidden ;
+    // overflow-y: hidden;
+    font-family: Poppins;
+}
+
+
+// @@@@@@@@@@@@@@@@@@@@@@  Big nav
+
+.big__nav{
+    position: absolute;
+    z-index: 101;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    .the__big__nav{
+        overflow: hidden;
+        place-items:center;
+        width: 100%;;
+        min-height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        ul{
+            width: 70%;
+            height: auto;
+            li{
+                border-bottom: solid #ffffff .05rem;
+                position: relative;
+                z-index: 10;
+                .cross__close{
+                    position: absolute;
+                    right: -13%;
+                    top: -55%;
+                    overflow: hidden;
+                    width: 3rem;
+                    height: 3rem;
+                    border: 1px solid white;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: all 0.4s ease-out;
+                    mix-blend-mode: difference;
+                    font-size: 2rem;
+                    color: white;
+                    &:hover{
+                        background-color: white;
+                        color: black;
+                    }
+                    &:hover i{
+                        color: rgb(0, 0, 0);
+                       transition: all 0.4s ease-out;
+                    }
+                }
+                .link__module{
+                    display: flex;
+                    margin: 2em 0 2em 0;
+                    z-index: 10;
+                    justify-content:space-between;
+                    span {
+                        font-family: "Mogen";
+                        z-index: 9;
+                        mix-blend-mode: difference;
+                        display: inline-block;
+                        position: relative;
+                        color: white;
+                        font-size: 3rem;
+                        text-transform: uppercase;
+                        &:hover{
+                            z-index: 20;
+                        }
+                    }
+                    img {
+                        mix-blend-mode: difference;
+                        z-index: 11;
+                    }
+                    .hover-reveal__00 {
+                        z-index: 19;
+                        position: absolute;
+                        width: 25vw;
+                        height: 35vh;
+                        top: 50%;
+                        left: 50%;
+                        pointer-events: none;
+                        transform: translate(-50%, -50%);
+                        overflow: hidden;
+                        opacity: 0;
+                        transform: scale(0.8);
+                        transition: all .5s ease-out;
+                        img {
+                            z-index: 11;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            position: relative;
+                            transition: transform .4s ease-out;
+                        }
+                    }
+                }
+            }
+        }
+    }  
+}
+
+// @@@@@@@@@@@@@@@@@@@@@@  THE MAIN HERO SECTION
+.hero__section{
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    z-index: 3;
+    .blur__nav{
+        width: 100%;
+        height: 8vh;
+        place-items: center;
+        background-color: rgba(255, 255, 255, 0.18);
+        backdrop-filter: blur(6px);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        box-shadow: rgba(0, 0, 0, 0.329) 0px 25px 20px -20px;
+        .navigation{
+            width: 90%;
+            margin-left: 5%;
+            height: 100%;
+            place-items: center;
+            text-align: center;
+            font-size: 1.2rem;
+            z-index: 20;
+            font-family: "Bagola";
+            .main__nav{
+                width: 80%;
+                ul .nav__item{
+                    margin: 0 1.5rem;
+                    mix-blend-mode: difference;
+                    .nav__link{
+                        color: #ffffff;
+                        font-family: "KARA";
+                        transition: all 0.4s ease-out;
+                        border:none ;
+                        padding: 5px;
+                        font-size: 1.3rem;
+                        &:hover {
+                            color: black;
+                            transform: scale(1.2);
+                        }
+                    }
+                    
+                }
+    
+            }
+            .product__icon{
+                width: 25vh;
+                // background-color: black;
+                display: flex;
+                transition: all 0.3s ease;
+                .product__icon__logo{
+                    margin-right: 25px;
+                    color: rgb(0, 0, 0);
+                    font-size: 1.4rem;
+                    // background-color: red;
+                    border-radius: 50%;
+                    border: 1px solid black;
+                    padding: 4px;
+                    transition: all 0.3s ease;
+                    &:hover{
+                        color: white;
+                        background-color: black;
+                    }
+                }
+                
+            }
+    
+        }
+    
+    }
+    .content{
+        display: flex;
+        flex-wrap: nowrap;
+        width: 100%;
+        height: 830px;
+        .item{
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            transition: all 0.6s ease-out;
+            height: 100%;
+            &:hover{
+                width: 250%;
+            }
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                @include center;
+                border: none;
+            }
+            .text{
+                position: absolute;
+                left: 0;
+                bottom: 14%;
+                width: 50%;
+                height: 7%;
+                font-family: "Mak";
+                color: rgb(255, 255, 255);
+                display: flex;
+                align-items: flex-end;
+                justify-content: flex-end;
+                z-index: 3;
+                font-size: 0.86rem;
+                .text-inner{
+                    backdrop-filter: blur(5px);
+                    max-width: 10rem;
+                    padding: 17px;
+                    border: 1px solid white;
+                    text-align: center;
+                    // width: 80%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 100%;
+                    background-color:rgba(255, 255, 255, 0.18) ;
+                    overflow: hidden;
+                    z-index: 3;
+                    min-width: 7rem;
+                    border-radius: 1rem;
+                    transition: all 0.4s ease-out;
+                    // box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+                    &:hover{
+                        transform: translateY(-10px);
+                        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+                        backdrop-filter: blur(7px);
+        
+                    }
+                    // filter: blur(1px);
+                    h2{
+                        max-width: 8rem;
+                        z-index: 5;
+                        overflow: hidden;
+                        a{
+                            color: white;
+                        }
+                        
+                    }
+                    
+                }
+            
+            }
+        }
+    }
+    
+}
+
+
+
+.three__icon{
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+// @@@@@@@@@@@@@@@@@  SPONSOPR PARTNER
+
+.sponsor__partners{
+    width: 100%;
+    height: 20vh;
+    background-color: #a77b5ad8;
+    // background-image: url(/assets/sponsorimage/2fd920145535283.62a02392163d6.jpg);
+    background-size: cover;
+    background-position: center;
+    font-family: "Romance";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(44, 44, 91, 0.296) 5px 30px 60px -12px inset, 
+                rgba(20, 15, 15, 0.29) 5px 18px 36px -18px inset;
+}
+.partners{
+    display: flex;
+    width: 60%;
+    height: 80%;
+
+}
+.partner{
+    width: 25%;
+    height: 100%;
+    text-align: center;
+    @include flex-all-center();
+    font-weight: bolder;
+}
+.partner__name{
+    font-size: 2rem;
+    font-weight: bolder;
+    color: rgb(211, 211, 211);
+    transition: all 0.3s ease-out;
+    text-transform: uppercase;
+}
+.partner__name:hover{
+    color: rgb(255, 255, 255);
+    cursor: default;
+}
+
+
+
+//  @@@@@@@@@@@@@@  KING KYLIE
+
+.written{
+    width: 100%;
+    height: 1800px;
+    background-color: #F2F3F6 ; 
+}
+.upper__part__of__kylie{
+    font-family: "Mak";
+    overflow: hidden;
+    width: 100%;
+    height: 80%;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    z-index: 3;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+.content__of__kylie__part{
+    width: 55%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.cta{
+    margin-top: 5rem;
+    width: 80%;
+    height: 70%;
+    font-size: 1rem;
+    .heading__belikekylie{
+        text-align: center;
+        font-size: 3rem;
+        .blk__head{
+            letter-spacing: 1px;
+            word-spacing: 1px;
+            color: rgb(0, 0, 0);
+        }
+        
+
+    }
+    
+}
+
+
+.cta__item__img{
+    z-index: 2;
+    pointer-events: none;
+    position: absolute;
+    height: 12vh;
+    max-height: 600px;
+    opacity: 0;
+    left: 8%;
+    top: 10%;
+    transform: scale(0);
+
+}
+.list__style__hover{
+    font-style: "Mak" ;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    transition: all 0.6s ease-out;
+    background-color: transparent;
+    .items__of__the__kylie__hover{
+        width: 90%;
+        color: black;
+
+       .list__item__of__hover{
+            border-bottom: solid #000000 .09rem;
+            position: relative;
+            z-index: 10;
+            list-style: none;
+           .link{
+                transition: all 0.6s ease-out;
+                display: flex;
+                padding: 4rem 0 2rem 0;
+                z-index: 10;
+                justify-content:space-between;
+                & > img{
+                    mix-blend-mode: difference;
+	                z-index: 10;
+                }
+                .hover-reveal {
+                    position: absolute;
+                    width: 17vw;
+                    height: 27vh;
+                    top: 50%;
+                    left: 50%;
+                    pointer-events: none;
+                    transform: translate(-50%, -50%);
+                    overflow: hidden;
+                    opacity: 0;
+                    transform: scale(0.8);
+                    transition: all .5s ease-out;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        position: relative;
+                        transition: transform .6s ease-out;
+                    }
+                }
+                span{
+                font-weight: 500;
+                z-index: 10;
+                mix-blend-mode: difference;
+                display: inline-block;
+                position: relative;
+                color: white;
+                font-size: 3rem;
+                text-transform: uppercase;
+                   a,a:hover,a:visited{
+                       text-decoration: none;
+                   }
+               }
+           }
+       } 
+    }
+
+}
+.hover__div__this{
+    margin-top: 1rem;
+    background-color: white;
+    height: 56vh;
+    width: 100%;
+    border-radius: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    align-items: flex-end;
+    .center__the__thing{
+        margin: 1.3rem 0;
+        width: 92%;
+        height: 40%;
+        background-color: #D8C1AF;
+        border-radius: 2rem;
+        box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+        
+        .img__of__hill{
+            position: relative;
+            width: 50%;
+            height: 100%;
+            .buynow__of__red__hill{
+                background-color: black;
+                position: absolute;
+                padding: 1rem;
+                right: -70%;
+                bottom: 33%;
+                box-shadow: rgba(40, 40, 40, 0.17) 0px -23px 25px 0px inset, rgba(27, 27, 27, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+            }
+            .red__hill{
+                position: absolute;
+                bottom: 1rem;
+                width: 100%;
+                object-fit: center;
+            }
+        }
+
+    }
+}
+
+.big__img{
+    width: 45%;
+    height: 100%;
+    overflow: hidden;
+    background-image: url(../King-kylie-section-images/Kylie-Jenner-Wallpaper-Aug-2021-26-min.jpeg);
+    background-size: cover;
+    background-position: center;
+    transition: all 0.5s ease-out;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    &:hover{
+        color: white;
+        background-image: url(../King-kylie-section-images/imga-namekylie-min.png);
+        background-size: cover;
+        background-position: center;
+    }
+    .shop__now__button{
+        width: 7rem;
+        height: 4rem;
+        margin-bottom: 13rem;
+        border: 1px solid #f9004d;
+        color: #f9004d;
+        background-color: transparent;
+        padding: 1rem;
+        border-radius: 2rem;
+        box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+        transition: background-color 0.6s ease-out;
+        &:hover{
+            background-color: #f9004d;
+            color: white;
+            font-weight: bold;
+            box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+        }
+
+    }
+}
+
+.written .kylie__product__cards{
+    width: 100%;
+    height: 20%;
+    background-color: #f3cdd0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product__card{
+    width: 20%;
+    height: 80%;
+    background-color: #F0F1F4;
+    margin: 0 1rem;
+    transition: all 600ms cubic-bezier(0.33, 0.11, 0.02, 0.99), transform 600ms cubic-bezier(0.33, 0.11, 0.02, 0.99);
+    box-shadow: 5px 5px 8px #00000020,
+                -5px -5px 8px #ffff;
+}
+
+.product__card:hover{
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    transform: scale(1.05) translateY(-0.8rem);
+}
+
+.pc__border{
+    transition: all 0.5s ease-out;
+    width: 96%;
+    height: 96%;
+    border-radius: 1px solid #e9e9e9;
+    // border-radius: 1rem;
+    margin-top: 2%;
+    margin-left: 2%;
+    position: relative;
+    .buying__option{
+        width: 100%;
+        height: 15%;
+        background-color: rgba(255, 255, 255, 0.76);
+        text-align: center;
+        position: absolute;
+        z-index: 2;
+        bottom: 10%;
+        left: 50%;
+        color: white;
+        transform: translate(-50%,-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+        a{
+            text-transform: uppercase;
+            font-weight: 800;
+            color: #050505;
+            text-align: center;
+            font-size: 1rem;
+            font-family: "Poppins";
+            transition: all 0.6s ease-out;
+            &:hover{
+                // background-color: #515355;
+                color: red;
+                text-decoration: underline;
+                transform: scale(1.2);
+            }
+        }
+    }
+
+
+}
+.short__pc__img{
+    position: absolute;
+    width: 100%;
+    height: 98%;
+    object-fit: cover;
+    // border-radius: 1rem  ;
+
+}
+// .short__pc__img:hover{
+//     box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+// }
+
+.the__littlecenter{
+    object-position: top 30% left 50% ;
+}
+
+
+
+
+
+// @@@@@@@@@@@@@@@@@@@  VIDEO SECTION 
+.video__section{
+    outline: none;
+    border: none;
+    width: 100%;
+    height: 80vh;
+    min-height: 600px;
+    overflow: hidden;
+    position: relative;
+    .background__filter{
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        // background: rgb(187,187,187);
+        // backdrop-filter: brightness(70%);
+        .main__vid{
+            position: relative;
+            top: 65%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            mix-blend-mode: darken;
+        }
+    }
+    .quotes{
+        width: 98%;
+        height: 96%;
+        position: absolute;
+        color: rgb(255, 255, 255);
+        font-family: "Bagola";
+        z-index: 4;
+        top: 2%;
+        left: 1%;
+        backdrop-filter: brightness(50%);
+        text-align: center;
+        // background: rgba(0, 0, 0, 0.064);
+        border: 1px solid white;
+        .signup__button__btn{
+            position: relative;
+            top: 72%;
+            left: 5.1%;
+            background-color: rgb(255, 255, 255);
+            color: black;
+            padding: 19px;
+            font-family: "Mak";
+            border: 1px solid white;
+            box-shadow: 5px 5px 8px #00000020,
+                    -5px -5px 8px rgba(255, 255, 255, 0.411);
+    
+            font-size: 1.3rem;
+            border-radius: 13px;
+            transform: translate(-50%,-50%);
+            a{
+                width: 200%;
+                height: 200%;
+            }
+            &:hover{
+                color: black;
+                box-shadow: inset 5px 5px 8px rgba(16, 16, 16, .1),
+                inset -7px -7px 8px rgb(232, 232, 232);
+    
+            }
+    
+        }
+    }
+
+}
+
+
+.video__quote{
+    position: absolute;
+    @include position-center();
+    font-size: 2rem;
+    line-height: 3.4rem;
+    font-weight: bolder;
+    letter-spacing: 2px;
+}
+
+
+
+
+
+//  @@@@@@@@@@@@@ Marquee effect of the next video part
+
+.marquee__effect__next__vid{
+    overflow: hidden;
+    background-color: #171715;
+    cursor: default;
+    white-space: nowrap;
+    padding: 10vh 0;
+    box-shadow: inset 20px 0 22px hsla(0, 0%, 16%, 0.53), 
+              inset -4px 12px 22px hsl(0, 0%, 20%);
+    .effect__of__marquee{
+        font-family: "KARA";
+        font-size: 12vh;
+        position: relative;
+        color: #b2afaa;
+        display: inline-block;
+        margin: 0 15%;
+        padding: 0 15%;
+        text-transform: uppercase;
+        will-change: transform;
+    }
+
+}
+
+//  @@@@@@@@@@@@@@@@  THE K POP AREA
+
+.the__k__pop__area{
+    // background-color: #ECF0F3;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    transition: all 0.6s ease-out;
+    z-index: -3;
+    .three__pic__collage{
+        width: 86%;
+        height: 70vh;
+        margin-left: 7%;
+        margin-top: 20vh ;
+        display: flex;
+        flex-wrap: nowrap;
+        // border-bottom: 1px solid black;
+        .contents__of__left{
+            width: 25%;
+            height: 100%;
+            
+            color: rgb(255, 255, 255);
+            font-family: "Romance";
+            font-size: 1.2rem;
+            font-weight: bolder;
+            position: relative;
+            z-index: 2;
+            .writting__of__heading{
+                margin-bottom: 1.2rem;
+            
+                position: absolute;
+                top: 14%;
+                left: 14%;
+            }
+        
+        }
+    }
+}
+
+.contents__of__left p{
+    width: 110%;
+    position: absolute;
+    top: 28%;
+    left: 14%
+}
+.main__three__images{
+    width: 50%;
+    height: 100%;
+    position: relative;
+}
+.main__three__images .middle__of__kpop{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+}
+.main__three__images .circle__of__round{
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    border: 1px solid black;
+    border-radius: 50%;
+    top: -60vh;
+    left: -70vh;
+    z-index: -1;
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    ;
+    filter: blur(10px);
+}
+.main__three__images .bottom__left{
+    position: absolute;
+    width: 45%;
+    height: 50%;
+    object-fit: cover;
+    z-index: 2;
+    bottom: -10%;
+    left: -25%;
+    object-position: top;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+}
+.main__three__images .top__right{
+    position: absolute;
+    width: 45%;
+    height: 45%;
+    object-fit: cover;
+    z-index: 2;
+    top: -15%;
+    right: -22%;
+    object-position: top;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+}
+.little__info__right{
+    width: 25%;
+    height: 100%;
+    text-align: start;
+    position: relative;
+    // mix-blend-mode: difference;
+    z-index: 3;
+    font-weight: bolder;
+
+}
+.little__info__right p{
+    position: absolute;
+    bottom: 5rem;
+    left: -4rem;
+    width: 110%;
+    text-align: end;
+    font-family: "Romance";
+    font-size: 1.2rem;
+    font-weight: bolder;
+
+}
+
+.the__bottom__section__of__kpop{
+    height: 110vh;
+    width: 100%;
+    @include flex-all-center();
+    .centering__the__items{
+        width: 80%;
+        height: 75vh;
+        box-shadow: 13px 13px 20px #cbced1,
+            -13px -13px 20px #ffffff;
+        border-radius: 1rem;
+
+        z-index: inherit;
+        @include flex-all-center();
+        .again__centering__the__items{
+            // background-color: white;
+            width: 98%;
+            height: 98%;
+            display: flex;
+            // align-items: center;
+            justify-content: center;
+            .details__of__kpop{
+                height: 88%;
+                width: 32%;
+                background-color: #ffffff;
+                border-radius: 2rem;
+                color: black;
+                box-shadow: 5px 5px 8px #00000020,
+                -5px -5px 8px #ffff;
+                transition: all .1s ease-out;
+            &:hover{
+                box-shadow: inset 5px 5px 8px rgba(16, 16, 16, .1),
+            inset -5px -5px 8px #fff;
+                background: #fff;
+            }
+            }
+            .first__half__div{
+                // background: red;
+                width: 68%;
+                height: 88%;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                transition: all 0.6s ease-out;
+                align-items: center;
+                justify-content: center;
+                .upper__right__div{
+                    position: relative;
+                    overflow: hidden;
+                    border-radius: 1rem;
+                    width: 98%;
+                    height: 48%;
+                    transition: all 0.6s ease-out;
+                    background-position: center;
+                    & img{
+                        object-fit: cover;
+                        width: 100%;
+                        height: 100%;
+                    }
+                    // &:hover{
+                    //     height: 90%;
+                    //     filter: blur(0);
+                    // }
+
+                }
+                .lower__right__div{
+                    position: relative;
+                    overflow: hidden;
+                    border-radius: 1rem;
+                    width: 98%;
+                    height: 48%;
+                    transition: all 0.6s ease-out;
+                    background-position: center;
+                    & img{
+                        object-fit: cover;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+// @@@@@@@@@@@@@@@@@@@  YOUR STAR SECTION
+
+.your__star__section{
+    width: 100%;
+    height: 820px;
+    .little__hero__section{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        .left__side__green{
+            width: 50%;
+            height: 100%;
+            background-color: #0e0402f4;
+            position: relative;
+            & img{
+                position: absolute;
+                width: 80%;
+                height: auto;
+                left: 57%;
+                top: -5%;
+                z-index: 10;
+            }
+            .details__of__left__side{
+                width: 70%;
+                height: 80%;
+                color: white;
+                position: absolute;
+                top: 10%;
+                left: 14%;
+                flex-direction: column;
+                justify-content: center;
+                margin:0 0 3rem 0 ;
+                
+                .middle__written{
+                    font-family: "Romance";
+                    font-weight: thin;
+                    font-size: 0.8rem;
+                    width: 60%;
+                    margin-bottom: 15rem ;
+                    margin-top: 1.5rem;
+                    position: relative;
+                    .circle__full{
+                        position: absolute;
+                        color: #190F0D;
+                        background-color: white;
+                        width: 20%;
+                        top: 10%;
+                        right: 10%;
+                        height: 20%;
+                        border-radius: 50%;
+    
+                    }
+    
+                }
+                .button__your__stars{
+                    width: 30%;
+                    height: 10%;
+                    outline: none;
+                    border: none;
+                    border-radius: 2rem;
+                    position: relative;
+                    cursor: pointer;
+                    font-weight: bold;
+                    font-size: 1rem;
+                    transition: all 0.6s ease-out;
+                    &:hover{
+                        // transform: translateY(-0.5rem);
+                        background-color: rgb(125, 106, 106);
+                    }
+    
+                }
+                .upper__writting__part{
+                    margin-top: 3rem;
+                    font-family: "Romance";
+                    line-height: 35px;
+                    // position: relative;
+                    .big__h1{
+                        font-size: 3.1rem;
+                        font-weight: bolder;
+                    }
+                    .small__h1{
+                        font-size: 1.4rem;
+                        
+                        
+                    }
+    
+                }
+            }
+        }
+        .right__side__magenta{
+            width: 50%;
+            height: 100%;
+            background-color: #c1c0be;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .wrapper{
+                width: 40%;
+                height: 40%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            .hero-title{
+                    font-size: .9rem;
+                    background-color: black;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 1px solid black;
+                    padding: 0.7rem;
+                    border-radius: 1.2rem;
+                    color: black;
+                    transition: transform 300ms linear;
+                &:hover{
+                    color: black;
+                    background-color: white;
+                    transform: translateY(-5px);
+                    border: 1px solid white;
+                
+                }
+                &:hover h1 a{
+                    color: black;
+                }
+
+            }
+    
+            }
+            
+        }
+    }
+}
+
+
+
+
+
+
+// @@@@@@@@@@@@@@@@ FOOTER
+.footer{
+    width: 100%;
+    height: 46vh;
+    font-family: "KENOKY";
+    font-size: 1rem;
+    background-color: #cfcfcf;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+    .footer__section{
+        width: 98%;
+        height: 92%;
+        border-radius: 1.1rem;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        .footer__details{
+            width: 90%;
+            height: 94%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+           
+            .footer__items{
+                width: 100%;
+                height: 90%;
+                color: rgb(164, 164, 164);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.4s ease-out;
+                .footer__item{
+                    width: 100%;
+                    height: 94%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    justify-content: center;
+                    line-height: 20px;
+                    cursor: pointer;
+                    .footer__title{
+                        font-size: 1.2rem;
+                        color: rgb(245, 243, 243);
+                        margin-bottom: 1.4rem;
+                        font-weight: bolder;
+                    }
+                    ul li:hover{
+                        color: white;
+                    }
+                }
+
+            }
+            .footer__copy{
+                width: 100%;
+                height: 10%;
+                text-align: center;
+                color: rgb(164, 164, 164);
+                border-top: 1px solid white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding-top: 3px;
+                transition: all 0.5s ease-out;
+                &:hover{
+                    color: white;
+                }
+            }
+            
+        }
+
+    }
+}
+
+.social ul li{
+    margin-bottom: 10px;
+    input{
+        border: none;
+        outline: none;
+        background: transparent;
+        border-bottom: 1px solid white;
+        padding: 5px;
+        color: white;
+}
+}
+
+#subscribe__btn{
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 2rem;
+    color: black;
+    text-align: center;
+    font-weight: bolder;
+    margin: 2rem 0;
+    &:hover{
+        color: black;
+    }
+}
+.socials i{
+    margin-left: 12px;
+}

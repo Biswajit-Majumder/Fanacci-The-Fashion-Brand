@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/assets/mr-bean21.jpeg">
+    <title>Page Not Found /go/home</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js" integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <section class="hero__section">
+        <div class="cursor">
+            <div></div>
+            <div class="bigger"></div>
+        </div>
+        <header class="header">
+            <a href="../Mainpage/index.html" target="_blank"><h2 class="logo">Fanacci</h2></a>
+            <nav class="nav">
+                <ul>
+                    <li><a href="../Mainpage/index.html">HOME</a></li>
+                    <li><a href="">ABOUT</a></li>
+                    <li><a href="">CONTACT</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="funny__image">
+                <img src="./assets/mr-bean18.jpeg" alt="">
+            </div>
+            <div class="contents">
+                <div class="container">
+                    <div class="text__area">
+                        <h2 class="really__text">Really?</h2>
+                        <h1 class="num">404</h1>
+                        <h1 class="pnf__textt">Page not found</h1>
+                    </div>
+                    <div class="button__area">
+                        <a href="../Mainpage/index.html" target="_blank"><button class="btn">Go To Home</button></a>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+    </section>
+
+    <script>
+        document.addEventListener("mousemove" , (e) =>{
+            gsap.to(".cursor div",{
+                x: e.clientX,
+                y: e.clientY,
+                stagger: .05
+            })
+        })
+    </script>
+</body>
+</html>
